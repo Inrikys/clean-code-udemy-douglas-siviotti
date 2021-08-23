@@ -1,5 +1,5 @@
 # Clean Code
-Esse projeto tem o objetivo o aprendizado da filosofia e práticas de Clean Code. Será usado para reforçar e relembrar conceitos
+Esse projeto tem como objetivo o aprendizado da filosofia e práticas de Clean Code. Será usado para reforçar e relembrar conceitos
 importantes
 
 
