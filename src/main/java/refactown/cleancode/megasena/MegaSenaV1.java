@@ -17,18 +17,26 @@ public class MegaSenaV1 {
      * @param premioTotal      O valor to prêmio em relação ao número de acertos.
      * @return O valor do prêmio a ser recebido por esta aposta.
      */
+
+    // Esse método deve apenas calcular o premio. Está com mais responsabilidades
     public double calculaPremio(List<Integer> numerosApostados, double premioTotal) {
         List<Integer> numerosValidos = new ArrayList<>();
+
+        // Trecho de validação com divida técnica
+        // Pode virar método para ser reusado
         for (Integer apostado : numerosApostados) {
             if (apostado < 1 || apostado > 60) {
                 return 0.0; // inválido
             }
+
+            // Poderia retornar uma exception
             if (numerosValidos.contains(apostado)) {
                 return 0.0; // repetido
             }
             numerosValidos.add(apostado);
         }
 
+        // Métodos podem ser desmembrados
         if (numerosValidos.size() >= 6 && numerosValidos.size() <= 15) {
             List<Integer> numerosSorteados = new ArrayList<>();
             int numeroSorteado;
@@ -54,6 +62,7 @@ public class MegaSenaV1 {
                 return premioTotal * 0.05; // Quadra = 5%
             }
         }
+        // Caso falhe, deve retornar exception
         return 0.0;
     }
 }

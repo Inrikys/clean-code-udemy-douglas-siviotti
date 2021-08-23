@@ -5,7 +5,18 @@ import java.util.List;
 import java.util.Random;
 
 public class MegaSenaV0 {
-    
+
+    // PROBLEMAS
+    // - Nomes ruins
+    // - Função grande e complexa (SRP)
+    // - Comentários questionáveis
+    // - Formatação inexistente
+
+    // DIFICULDADES
+    // - Legibilidade: confuso
+    // - Testabilidade: alta complexidade
+
+    // Não consigo saber o que o método faz
     public double megasena(List<Integer> num, double valor) {
         List<Integer> list = new ArrayList<>(); // válidos
         for (Integer n: num){

@@ -20,11 +20,15 @@ public class MegaSenaV2 {
      * @return O valor do prêmio a ser recebido por esta aposta.
      */
     public double calculaPremio(List<Integer> apostados, double premioTotal) {
-        if (!isApostaValida(apostados)) return 0.0;
+        // Delegação sendo aplicada corretamente
+        // Pré requisitos
+        if (!isApostaValida(apostados)) return 0.0; // Pode lançar exceção
         List<Integer> sorteados = sorteiaSeisNumeros();
         long acertos = calculaAcertos(apostados, sorteados);
-        if (acertos == 6) {
-            return premioTotal; // Sena = 100%
+
+        // Cálculo de premio
+        if (acertos == 6) { // Valor pode virar constante
+            return premioTotal; // Sena = 100% SENA, QUINA E QUADRA  podem ser ENUM
         } else if (acertos == 5) {
             return premioTotal * 0.2; // Quina = 20%
         } else if (acertos == 4) {
@@ -50,6 +54,7 @@ public class MegaSenaV2 {
         return true;
     }
 
+    // Pode virar uma classe a parte pois não faz parte do dominio diretamente
     private List<Integer> sorteiaSeisNumeros() {
         List<Integer> sorteados = new ArrayList<>();
         int numeroSorteado;

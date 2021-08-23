@@ -31,6 +31,7 @@ public class MegaSenaV3 {
         return 0.0;
     }
 
+    // Utilizando API de Stream foi possível reduzir o código
     private boolean isApostaValida(List<Integer> numerosApostados) {
         return numerosApostados.size() >= 6 && numerosApostados.size() <= 15 &&
                 numerosApostados.stream().distinct().filter(n -> n >= 1 && n <= 60).
